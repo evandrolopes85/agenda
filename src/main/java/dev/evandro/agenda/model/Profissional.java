@@ -27,14 +27,10 @@ public class Profissional {
 	
 	@Column(name = "profissao", length=100, nullable=false)
 	private String profissao;
-
-	@OneToMany(mappedBy = "profissional", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("profissional")
-	private List<Servico> servicos;
 	
 	@OneToMany(mappedBy = "profissional", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("profissional")
-	private List<HorarioMarcado> horariosMarcado;
+	private List<Agendamento> agendamentos;
 	
 	public Integer getIdProfissional() {
 		return idProfissional;
@@ -60,20 +56,12 @@ public class Profissional {
 		this.profissao = profissao;
 	}
 
-	public List<Servico> getServicos() {
-		return servicos;
+	public List<Agendamento> getAgendamentos() {
+		return agendamentos;
 	}
 
-	public void setServicos(List<Servico> servicos) {
-		this.servicos = servicos;
-	}
-
-	public List<HorarioMarcado> getHorariosMarcado() {
-		return horariosMarcado;
-	}
-
-	public void setHorariosMarcado(List<HorarioMarcado> horariosMarcado) {
-		this.horariosMarcado = horariosMarcado;
+	public void setHorariosMarcado(List<Agendamento> agendamentos) {
+		this.agendamentos = agendamentos;
 	}
 	
 }

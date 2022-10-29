@@ -32,9 +32,9 @@ public class Servico {
 	@JsonIgnoreProperties("servicos")
 	private Profissional profissional;
 
-//	@OneToMany(mappedBy = "servico", cascade = CascadeType.ALL)
-//	@JsonIgnoreProperties("servico")
-//	private List<HorarioMarcado> horariosMarcado;
+	@OneToMany(mappedBy = "servico", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("servico")
+	private List<Agendamento> agendamentos;
 
 	public Integer getIdService() {
 		return idService;
@@ -60,12 +60,12 @@ public class Servico {
 		this.profissional = profissional;
 	}
 
-//	public List<HorarioMarcado> getHorarioMarcado() {
-//		return horariosMarcado;
-//	}
-//
-//	public void setHorarioMarcado(List<HorarioMarcado> horarioMarcado) {
-//		this.horariosMarcado = horarioMarcado;
-//	}
+	public List<Agendamento> getAgendamentos() {
+		return agendamentos;
+	}
+
+	public void setAgendamentos(List<Agendamento> agendamentos) {
+		this.agendamentos = agendamentos;
+	}
 
 }
