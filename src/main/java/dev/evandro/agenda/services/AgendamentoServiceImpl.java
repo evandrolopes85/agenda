@@ -15,13 +15,13 @@ public class AgendamentoServiceImpl implements IAgendamentoService{
 	private AgendamentoDAO dao;
 	
 	@Override
-	public Agendamento cadastrarHorarioMarcado(Agendamento novo) {
+	public Agendamento cadastrarAgendamento(Agendamento novo) {
 		// TODO Auto-generated method stub
 		return dao.save(novo);
 	}
 
 	@Override
-	public List<Agendamento> recuperarHorarioMarcado() {
+	public List<Agendamento> recuperarTodos(){
 		// TODO Auto-generated method stub
 		return (List<Agendamento>)dao.findAll();
 	}

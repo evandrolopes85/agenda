@@ -2,6 +2,7 @@ package dev.evandro.agenda.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Cliente {
 	@Column(name="telefone", length=16, nullable=false)
 	private String telefone;
 	
-	@OneToMany(mappedBy = "cliente")
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("cliente")
 	private List<Agendamento> agendamentos;
 

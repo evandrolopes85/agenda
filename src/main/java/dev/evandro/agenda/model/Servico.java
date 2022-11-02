@@ -27,10 +27,10 @@ public class Servico {
 	@Column(name = "servico", length = 100, nullable = false)
 	private String servico;
 
-	@ManyToOne
-	@JoinColumn(name = "id_profissional")
-	@JsonIgnoreProperties("servicos")
-	private Profissional profissional;
+//	@ManyToOne
+//	@JoinColumn(name = "id_profissional")
+//	@JsonIgnoreProperties("servicos")
+//	private Profissional profissional;
 
 	@OneToMany(mappedBy = "servico", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("servico")
@@ -52,13 +52,13 @@ public class Servico {
 		this.servico = servico;
 	}
 
-	public Profissional getProfissional() {
-		return profissional;
-	}
-
-	public void setProfissional(Profissional profissional) {
-		this.profissional = profissional;
-	}
+//	public Profissional getProfissional() {
+//		return profissional;
+//	}
+//
+//	public void setProfissional(Profissional profissional) {
+//		this.profissional = profissional;
+//	}
 
 	public List<Agendamento> getAgendamentos() {
 		return agendamentos;

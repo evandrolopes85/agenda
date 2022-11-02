@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tbl_horario_marcado")
+@Table(name = "tbl_agendamento")
 public class Agendamento {
 
 	@Id
