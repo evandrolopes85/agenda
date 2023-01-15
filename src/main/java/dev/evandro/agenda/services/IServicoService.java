@@ -9,4 +9,5 @@ public interface IServicoService {
 	public List<Servico> recuperarTodos();
 	public Servico recuperarPorId(Integer id);
 	public Servico cadastrarServico(Servico novo);
+	public Servico atualizarServico(Servico update);
 }

@@ -23,13 +23,32 @@ public class ServicoServiceImpl implements IServicoService{
 	@Override
 	public Servico recuperarPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findById(id).orElse(null);
 	}
 
 	@Override
 	public Servico cadastrarServico(Servico novo) {
 		// TODO Auto-generated method stub
-		return dao.save(novo);
+		if(novo.getIdServico() != null) {
+			novo.setIdServico(null);
+		}
+		if(novo != null) {
+			return dao.save(novo);
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Servico atualizarServico(Servico update) {
+		// TODO Auto-generated method stub
+		Servico servicoParaAtualizar = dao.findById(update.getIdServico()).get();
+		
+		if(servicoParaAtualizar != null) {
+			return dao.save(servicoParaAtualizar);
+		}
+		
+		return null;
 	}
 
 }
