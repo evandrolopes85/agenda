@@ -113,3 +113,9 @@ CREATE TABLE `tbl_servico` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-01-15 21:16:51
+
+create table tbl_usuario (
+	id_usuario Int not null auto_increment primary key,
+    name varchar(100) not null unique,
+    password varchar(20) not null 
+);
